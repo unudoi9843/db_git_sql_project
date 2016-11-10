@@ -1,0 +1,24 @@
+
+create database git_sql_training
+
+use git_sql_training
+
+create table pers(name varchar(30),age int(3))
+
+load data infile 'pers.csv' into table pers fields terminated by ',' lines terminated by '\n'ignore 1 rows
+
+alter table pers add pers_id int(5) not null auto_increment primary key
+
+create table contacts(email varchar(50),login varchar(20),password varchar(20),site varchar(50))
+
+load data infile 'contacts.csv' into table contacts fields terminated by ',' lines terminated by '\n' ignore 1 rows
+
+create table other_data(number integer(15),zodiac varchar(20),ocupation varchar(300),favorite_collor varchar(20))
+
+load data infile 'other_data.csv' into table other_data fields terminated by ',' lines terminated by '\n' ignore 1 rows
+
+alter table contacts add cont_id int(5) not null auto_increment primary key
+
+alter table other_data add data_id int(5) not null auto_increment primary key
+
+alter table contacts add constraint id foreign key(cont_id) references pers (pers_id) on delete cascade on update cascade;
