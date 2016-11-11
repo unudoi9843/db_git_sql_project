@@ -7,4 +7,3 @@ create table other_data(
  favorite_collor varchar(20),
  data_id int(5) not null auto_increment primary key
 )
-

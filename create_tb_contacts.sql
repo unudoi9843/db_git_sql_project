@@ -7,3 +7,4 @@ create table contacts (
  site varchar(50),
  cont_id int(5) not null auto_increment primary key
 )
+
